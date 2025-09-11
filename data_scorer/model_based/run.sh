@@ -1,5 +1,3 @@
-source ~/.bashrc
-conda activate oda
 
 # DeitaCScorer
 python main_para.py --config configs/DeitaCScorer.yaml
