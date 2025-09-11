@@ -125,7 +125,8 @@ class IFDScorer(BaseScorer):
             instruct_input_ids = self.tokenizer.encode(
                 prompt, return_tensors="pt", truncation=True, max_length=self.config['max_length']).to(self.device)
             instruct_len = instruct_input_ids.shape[1]
-
+            # print('=======================hanzhang=========================')
+            # print(self.config['max_length'], instruct_len, len(output))
             ppl_out_alone, loss_out_alone = self.get_perplexity_and_embedding_whole_text(
                 output, self.config['max_length']-instruct_len+1)
             ppl_out_condition, loss_out_condition = self.get_perplexity_and_embedding_part_text(

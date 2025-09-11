@@ -1,8 +1,8 @@
-input_path: ../data_process/example_input.jsonl
+input_path: /mnt/pretrain/hanzhang/instruction_datasets/0x22almostEvil_ru-riddles-377_subset_default_split_train_instruction.jsonl
 output_path: results/example_output_IFDScorer
-num_gpu: 2
+num_gpu: 0
 
 scorers:
   - name: IFDScorer
     model: Qwen/Qwen2.5-3B-Instruct
-    max_length: 2048
+    max_length: 1024

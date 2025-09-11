@@ -1,6 +1,6 @@
-input_path: ../data_process/example_input_w_answer.jsonl
+input_path: /mnt/pretrain/hanzhang/instruction_datasets/0x22almostEvil_ru-riddles-377_subset_default_split_train_instruction.jsonl
 output_path: results/example_output_MultiScorer
-num_gpu: 2
+num_gpu: 1
 
 scorers:
   - name: DeitaCScorer
@@ -11,10 +11,6 @@ scorers:
     model: hkust-nlp/deita-quality-scorer
     max_length: 2048
     batch_size: 2
-  - name: FailRateScorer
-    model: Qwen/Qwen3-8B
-    metrics_sample_size: 4
-    generation_size: 4096
   - name: IFDScorer
     model: Qwen/Qwen2.5-3B-Instruct
     max_length: 2048

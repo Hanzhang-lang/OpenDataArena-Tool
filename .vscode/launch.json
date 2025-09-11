@@ -1,0 +1,72 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug IFDScorer (Model Based)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/data_scorer/model_based/main_para.py",
+            "args": [
+                "--config",
+                "configs/IFDScorer.yaml"
+            ],
+            "cwd": "${workspaceFolder}/data_scorer/model_based",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+        },
+        {
+            "name": "Debug IFDScorer (Heuristic)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/data_scorer/heuristic/main_para.py",
+            "args": [
+                "--config",
+                "configs/IFDScorer.yaml"
+            ],
+            "cwd": "${workspaceFolder}/data_scorer/heuristic",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}:${workspaceFolder}/data_scorer/heuristic"
+            }
+        },
+        {
+            "name": "Debug IFDScorer with Custom Config",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/data_scorer/model_based/main_para.py",
+            "args": [
+                "--config",
+                "${input:configFile}"
+            ],
+            "cwd": "${workspaceFolder}/data_scorer/model_based",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}:${workspaceFolder}/data_scorer/model_based"
+            }
+        },
+        {
+            "name": "Debug Current Python File",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}"
+            }
+        }
+    ],
+    "inputs": [
+        {
+            "id": "configFile",
+            "description": "Enter config file path relative to cwd",
+            "default": "configs/IFDScorer.yaml",
+            "type": "promptString"
+        }
+    ]
+}
