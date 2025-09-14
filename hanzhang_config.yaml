@@ -1,0 +1,28 @@
+allow-other: false
+logging:
+    type: syslog
+libfuse:
+    attribute-expiration-sec: 240
+    entry-expiration-sec: 240
+    negative-entry-expiration-sec: 120
+file_cache:
+    path: /mnt/cache/pretrain
+    timeout-sec: 120
+azstorage:
+    account-name: xiaoliuinterns # TO BE FILLED
+    endpoint: https://xiaoliuinterns.blob.core.windows.net/   # TO BE FILLED
+    container: openpai  # TO BE FILLED
+    mode: sas
+    sas: ?sv=2023-01-03&spr=https&st=2025-09-13T04%3A31%3A00Z&se=2025-09-21T04%3A31%3A00Z&skoid=9ddf5e6e-c8ac-4a5f-beb0-35d9dbb99e8c&sktid=72f988bf-86f1-41af-91ab-2d7cd011db47&skt=2025-09-13T04%3A31%3A00Z&ske=2025-09-21T04%3A31%3A00Z&sks=b&skv=2023-01-03&sr=c&sp=racwdxltf&sig=0iiKrzAwrKGNOdEpSbWXZqNbFFHqhhT5CmQk0Lzb8cY%3D
+    # sas: ?sv=2023-01-03&ss=btqf&srt=sco&spr=https&st=2025-09-01T01%3A28%3A00Z&se=2025-09-30T01%3A28%3A00Z&sp=rwdxftlacup&sig=Wqk%2BiFc36fIXr2xwiK3A94%2FJc8apbH1lgdZgqJzWZ9U%3D
+    update-md5: false
+    validate-md5: false
+    virtual-directory: true
+    max-results-for-list: 0
+    disable-compression: false
+    telemetry: ""
+    honour-acl: false
+components:
+    - libfuse
+    - file_cache
+    - azstorage
