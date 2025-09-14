@@ -1,4 +1,4 @@
-input_path: /mnt/pretrain/hanzhang/instruction_datasets/0x22almostEvil_ru-riddles-377_subset_default_split_train_instruction.jsonl
+input_path: /mnt/pretrain/hanzhang/instruction_datasets/0x70DA_stackoverflow-chat-data_subset_default_split_train_instruction.jsonl
 output_path: /mnt/pretrain/hanzhang/scorer_results/example_output_MultiScorer
 num_gpu: 2
 
